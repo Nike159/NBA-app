@@ -1,0 +1,110 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background: #222;
+    background-image: url('https://source.unsplash.com/1600x900/?basketball');
+    font-size: 200%;
+}
+
+section {
+    display: flex;
+    align-self: baseline;
+    justify-content: space-around;
+    align-items: baseline;
+    gap: 80px;
+    background: #000000d0;
+    color: white;
+    padding: 8em;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 420px;
+    margin: 1em;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: bisque;
+}
+
+.home-search {
+    border: none;
+    outline: none;
+    padding: 1.5em 3em;
+    border-radius: 100px;
+    font-style: italic;
+}
+
+.homeScore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: bisque;
+
+}
+
+.total {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: bisque;
+}
+
+.away {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: bisque;
+}
+
+.away-search {
+    border: none;
+    outline: none;
+    padding: 1.5em 3em;
+    border-radius: 100px;
+    font-style: italic;
+}
+
+.awayScore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: bisque;
+
+}
+
+button {
+    margin: 0.5em;
+    border-radius: 50%;
+    border: none;
+    height: 44px;
+    width: 44px;
+    outline: none;
+    background: #f4eded2b;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+button:hover {
+    background: #7c7c7c6b;
+}
+
+
+
