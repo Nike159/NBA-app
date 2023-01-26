@@ -29,6 +29,11 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+    border: none;
+    outline: none;
+    padding: 1.5em 3em;
+    border-radius: 100px;
+    font-style: italic;
 }
 
 .home {
@@ -39,13 +44,7 @@ section {
     color: bisque;
 }
 
-.home-search {
-    border: none;
-    outline: none;
-    padding: 1.5em 3em;
-    border-radius: 100px;
-    font-style: italic;
-}
+
 
 .homeScore {
     display: flex;
@@ -72,13 +71,7 @@ section {
     color: bisque;
 }
 
-.away-search {
-    border: none;
-    outline: none;
-    padding: 1.5em 3em;
-    border-radius: 100px;
-    font-style: italic;
-}
+
 
 .awayScore {
     display: flex;
