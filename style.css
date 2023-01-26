@@ -25,7 +25,17 @@ section {
     margin: 1em;
 }
 
-.search {
+.hsearch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    padding: 1.5em 3em;
+    border-radius: 100px;
+    font-style: italic;
+}
+.asearch {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -55,7 +65,7 @@ section {
 
 }
 
-.total {
+.totals {
     display: flex;
     justify-content: center;
     align-items: center;
