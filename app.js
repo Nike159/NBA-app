@@ -8,7 +8,7 @@ var total = 0;
 let totalScore = {
     
     homeScore: function (team_id) {
-        fetch("https://www.balldontlie.io/api/v1/games?start_date=2023-01-25&end_date=2023-01-25&team_ids[]=" + team_id +"")
+        fetch("https://www.balldontlie.io/api/v1/games?start_date=2023-01-26&end_date=2023-01-26&team_ids[]=" + team_id +"")
         .then((data)=>{
             return data.json();
         }).then((completedata)=>{
@@ -26,12 +26,12 @@ let totalScore = {
 },
 
     awayScore: function (team_id) {
-        fetch("https://www.balldontlie.io/api/v1/games?start_date=2023-01-25&end_date=2023-01-25&team_ids[]=" + team_id +"")
+        fetch("https://www.balldontlie.io/api/v1/games?start_date=2023-01-26&end_date=2023-01-26&team_ids[]=" + team_id +"")
         .then((data)=>{
             return data.json();
         }).then((completedata)=>{
-            this.awayS = completedata.data[0].visitor_team_score;
             console.log(completedata.data[0].visitor_team_score);
+            this.awayS = completedata.data[0].visitor_team_score;
             document.querySelector(".awayScore").innerText = completedata.data[0].visitor_team_score;
         });
     },
@@ -52,26 +52,29 @@ let totalScore = {
     
 };
 
+
 document
-.querySelector(".homeButton")
+.querySelector(".hsearch")
 .addEventListener("click", function () {
     totalScore.hsearch();
 });
 
+
 document
-.querySelector(".awayButton")
+.querySelector(".asearch")
 .addEventListener("click", function () {
     totalScore.asearch();
 });
 
+
 document
-.querySelector(".awayButton")
+.querySelector(".scoreButton")
 .addEventListener("click", function () {
     totalScore.score();
 });
 
 document
-.querySelector(".homeButton")
+.querySelector(".scoreButton")
 .addEventListener("click", function () {
     totalScore.score();
 });
