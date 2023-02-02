@@ -2,13 +2,12 @@ let currentDate = new Date().toJSON().slice(0, 10);
 console.log(currentDate);
 let homeS = 0;
 let awayS = 0;
-var total = 0;
+var test = 200;
 
 
-let totalScore = {
     
-    homeScore: function (team_id) {
-        fetch("https://www.balldontlie.io/api/v1/games?start_date=2023-01-26&end_date=2023-01-26&team_ids[]=" + team_id +"")
+    function homeScore(team_id) {
+        fetch("https://www.balldontlie.io/api/v1/games?start_date=02-01-2023&end_date=02-01-2023&team_ids[]=" + team_id +"")
         .then((data)=>{
             return data.json();
         }).then((completedata)=>{
@@ -19,14 +18,14 @@ let totalScore = {
         
 
 
-},
+};
 
-    hsearch: function () {
+     function hsearch() {
         this.homeScore(document.querySelector(".hsearch").value);
-},
+     };
 
-    awayScore: function (team_id) {
-        fetch("https://www.balldontlie.io/api/v1/games?start_date=2023-01-26&end_date=2023-01-26&team_ids[]=" + team_id +"")
+    function awayScore(team_id) {
+        fetch("https://www.balldontlie.io/api/v1/games?start_date=" + currentDate +"&end_date=" + currentDate + "&team_ids[]=" + team_id +"")
         .then((data)=>{
             return data.json();
         }).then((completedata)=>{
@@ -34,50 +33,56 @@ let totalScore = {
             this.awayS = completedata.data[0].visitor_team_score;
             document.querySelector(".awayScore").innerText = completedata.data[0].visitor_team_score;
         });
-    },
-    asearch: function () {
+    };
+    function asearch() {
         this.awayScore(document.querySelector(".asearch").value);
         
-    },
+    };
 
     
 
-    score: function () {
+    function score() {
         var total= 0;
         var total = this.homeS + this.awayS;
         document.querySelector("#total").innerText = total;
-    },
+    };
 
 
     
-};
+
+setInterval(asearch, 30000);
+setInterval(hsearch, 30000);
+setInterval(score, 30000);
+
+
+
+
+
 
 
 document
 .querySelector(".hsearch")
 .addEventListener("click", function () {
-    totalScore.hsearch();
+    hsearch();
 });
 
 
 document
 .querySelector(".asearch")
 .addEventListener("click", function () {
-    totalScore.asearch();
+    asearch();
 });
 
 
-document
-.querySelector(".scoreButton")
-.addEventListener("click", function () {
-    totalScore.score();
-});
 
 document
 .querySelector(".scoreButton")
 .addEventListener("click", function () {
-    totalScore.score();
+    score();
 });
+
+
+
 
 
 
