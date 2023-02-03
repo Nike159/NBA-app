@@ -1,5 +1,4 @@
 const date = new Date();
-
 let day = date.getDate();
 let month = date.getMonth() + 1;
 let year = date.getFullYear();
@@ -55,9 +54,9 @@ var test = 200;
 
     
 
-setInterval(asearch, 30000);
-setInterval(hsearch, 30000);
-setInterval(score, 30000);
+setInterval(asearch, 120000);
+setInterval(hsearch, 120000);
+setInterval(score, 120000);
 
 
 
