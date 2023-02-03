@@ -1,5 +1,10 @@
-let currentDate = new Date().toJSON().slice(0, 10);
-console.log(currentDate);
+const date = new Date();
+
+let day = date.getDate();
+let month = date.getMonth() + 1;
+let year = date.getFullYear();
+let currentDate = `${month}-${day}-${year}`;
+console.log(currentDate); 
 let homeS = 0;
 let awayS = 0;
 var test = 200;
@@ -7,7 +12,7 @@ var test = 200;
 
     
     function homeScore(team_id) {
-        fetch("https://www.balldontlie.io/api/v1/games?start_date=02-01-2023&end_date=02-01-2023&team_ids[]=" + team_id +"")
+        fetch("https://www.balldontlie.io/api/v1/games?start_date=" + currentDate +"&end_date=" + currentDate + "&team_ids[]=" + team_id +"")
         .then((data)=>{
             return data.json();
         }).then((completedata)=>{
